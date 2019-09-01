@@ -193,7 +193,33 @@ export const createTakenFieldsFromFigures = (
   return fields;
 };
 
-export const createBoardFromTakenFields = (takenFields: TakenFieldsI) => {};
+const __getFigureFromTakenFields = (field, takenFields: TakenFieldsI) => {
+  if (takenFields[field]) {
+    return takenFields[field].figure;
+  } else {
+    return null;
+  }
+};
+
+export const createBoardFromTakenFields = (takenFields: TakenFieldsI) => {
+  let board = {};
+
+  Object.keys(columnsInd).map(column => {
+    let current = {};
+    Object.keys(rows).map(row => {
+      current[row] = {
+        figure: __getFigureFromTakenFields(
+          columnsInd[column] + row,
+          takenFields
+        ),
+        //@ts-ignore
+        color: getFieldColor(column, row)
+      };
+    });
+    board[columnsInd[column]] = current;
+  });
+  return board;
+};
 
 const __getRowFieldColor = (order: 0 | 1, column: number) => {
   let fieldColorsP = [fieldColors.white, fieldColors.black];
@@ -206,7 +232,7 @@ const __getRowFieldColor = (order: 0 | 1, column: number) => {
   }
 };
 
-const getFieldColor = (row: rowT, column: columnT) => {
+const getFieldColor = (column: columnT, row: rowT) => {
   if (row % 2 === 0) {
     return __getRowFieldColor(0, column);
   } else {

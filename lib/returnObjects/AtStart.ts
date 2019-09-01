@@ -1,3 +1,86 @@
+export const boardAtStart = {
+  A: {
+    "1": { figure: { type: "R", side: 0, field: "A1", moves: [] }, color: 0 },
+    "2": { figure: { type: "P", side: 0, field: "A2", moves: [] }, color: 1 },
+    "3": { figure: null, color: 0 },
+    "4": { figure: null, color: 1 },
+    "5": { figure: null, color: 0 },
+    "6": { figure: null, color: 1 },
+    "7": { figure: { type: "P", side: 1, field: "A7", moves: [] }, color: 0 },
+    "8": { figure: { type: "R", side: 1, field: "A8", moves: [] }, color: 1 }
+  },
+  B: {
+    "1": { figure: { type: "N", side: 0, field: "B1", moves: [] }, color: 1 },
+    "2": { figure: { type: "P", side: 0, field: "B2", moves: [] }, color: 0 },
+    "3": { figure: null, color: 1 },
+    "4": { figure: null, color: 0 },
+    "5": { figure: null, color: 1 },
+    "6": { figure: null, color: 0 },
+    "7": { figure: { type: "P", side: 1, field: "B7", moves: [] }, color: 1 },
+    "8": { figure: { type: "N", side: 1, field: "B8", moves: [] }, color: 0 }
+  },
+  C: {
+    "1": { figure: { type: "B", side: 0, field: "C1", moves: [] }, color: 0 },
+    "2": { figure: { type: "P", side: 0, field: "C2", moves: [] }, color: 1 },
+    "3": { figure: null, color: 0 },
+    "4": { figure: null, color: 1 },
+    "5": { figure: null, color: 0 },
+    "6": { figure: null, color: 1 },
+    "7": { figure: { type: "P", side: 1, field: "C7", moves: [] }, color: 0 },
+    "8": { figure: { type: "B", side: 1, field: "C8", moves: [] }, color: 1 }
+  },
+  D: {
+    "1": { figure: { type: "Q", side: 0, field: "D1", moves: [] }, color: 1 },
+    "2": { figure: { type: "P", side: 0, field: "D2", moves: [] }, color: 0 },
+    "3": { figure: null, color: 1 },
+    "4": { figure: null, color: 0 },
+    "5": { figure: null, color: 1 },
+    "6": { figure: null, color: 0 },
+    "7": { figure: { type: "P", side: 1, field: "D7", moves: [] }, color: 1 },
+    "8": { figure: { type: "Q", side: 1, field: "D8", moves: [] }, color: 0 }
+  },
+  E: {
+    "1": { figure: { type: "K", side: 0, field: "E1", moves: [] }, color: 0 },
+    "2": { figure: { type: "P", side: 0, field: "E2", moves: [] }, color: 1 },
+    "3": { figure: null, color: 0 },
+    "4": { figure: null, color: 1 },
+    "5": { figure: null, color: 0 },
+    "6": { figure: null, color: 1 },
+    "7": { figure: { type: "P", side: 1, field: "E7", moves: [] }, color: 0 },
+    "8": { figure: { type: "K", side: 1, field: "E8", moves: [] }, color: 1 }
+  },
+  F: {
+    "1": { figure: { type: "B", side: 0, field: "F1", moves: [] }, color: 1 },
+    "2": { figure: { type: "P", side: 0, field: "F2", moves: [] }, color: 0 },
+    "3": { figure: null, color: 1 },
+    "4": { figure: null, color: 0 },
+    "5": { figure: null, color: 1 },
+    "6": { figure: null, color: 0 },
+    "7": { figure: { type: "P", side: 1, field: "F7", moves: [] }, color: 1 },
+    "8": { figure: { type: "B", side: 1, field: "F8", moves: [] }, color: 0 }
+  },
+  G: {
+    "1": { figure: { type: "N", side: 0, field: "G1", moves: [] }, color: 0 },
+    "2": { figure: { type: "P", side: 0, field: "G2", moves: [] }, color: 1 },
+    "3": { figure: null, color: 0 },
+    "4": { figure: null, color: 1 },
+    "5": { figure: null, color: 0 },
+    "6": { figure: null, color: 1 },
+    "7": { figure: { type: "P", side: 1, field: "G7", moves: [] }, color: 0 },
+    "8": { figure: { type: "N", side: 1, field: "G8", moves: [] }, color: 1 }
+  },
+  H: {
+    "1": { figure: { type: "R", side: 0, field: "H1", moves: [] }, color: 1 },
+    "2": { figure: { type: "P", side: 0, field: "H2", moves: [] }, color: 0 },
+    "3": { figure: null, color: 1 },
+    "4": { figure: null, color: 0 },
+    "5": { figure: null, color: 1 },
+    "6": { figure: null, color: 0 },
+    "7": { figure: { type: "P", side: 1, field: "H7", moves: [] }, color: 1 },
+    "8": { figure: { type: "R", side: 1, field: "H8", moves: [] }, color: 0 }
+  }
+};
+
 export const figuresAtStart = {
   white: {
     R1: { type: "R", side: 0, field: "A1", moves: [] },
