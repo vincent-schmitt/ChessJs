@@ -1,11 +1,16 @@
 // types
-import { whiteBlackFiguresI } from "./types/index";
+import { FiguresI, whiteBlackFiguresI } from "./types/index";
 
 //helpers
-import { createStartFigures } from "./lib/helpers/index";
+import {
+  createAliveStartFigures,
+  createStartFigures
+} from "./lib/helpers/index";
 
 class ChessJs {
   alive: whiteBlackFiguresI;
+  dead: whiteBlackFiguresI;
+  figures: FiguresI;
   constructor(GameState = null) {
     if (!GameState) {
       this.__newGame();
@@ -15,7 +20,12 @@ class ChessJs {
   }
 
   __newGame = () => {
-    this.alive = createStartFigures();
+    this.alive = createAliveStartFigures();
+    this.dead = { white: [], black: [] };
+
+    this.figures = createStartFigures();
+
+    console.log(this.figures);
   };
 }
 
