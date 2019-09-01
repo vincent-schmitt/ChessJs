@@ -1,0 +1,17 @@
+{
+  "name": "chessjs",
+  "version": "0.0.1",
+  "description": "Javascript chess engine",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "chess",
+    "engine",
+    "chess",
+    "javascript"
+  ],
+  "author": "Vindao (Vincent Schmitt)",
+  "license": "ISC"
+}
