@@ -1,1 +1,3 @@
-export const tester = () => "Hello";
+const tester = () => "Hello";
+
+export default tester;

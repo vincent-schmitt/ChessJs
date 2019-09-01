@@ -1,4 +1,4 @@
-import { tester } from "../src/index";
+import tester from "../src/index";
 
 test("test tester", () => {
   expect(tester()).toEqual("Hello");
