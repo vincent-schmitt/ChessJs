@@ -1,5 +1,5 @@
 // types
-import { whiteBlackFiguresI } from "../types/index";
+import { aliveFiguresI } from "../types/index";
 
 export const figures = [
   "R1",
@@ -20,7 +20,9 @@ export const figures = [
   "P8"
 ];
 
-export const whiteBlackFigures: whiteBlackFiguresI = {
+export const fieldColors = { white: 0, black: 1 };
+
+export const whiteBlackFigures: aliveFiguresI = {
   white: [
     "R1",
     "N1",
@@ -54,7 +56,8 @@ export const whiteBlackFigures: whiteBlackFiguresI = {
     "P4",
     "P5",
     "P6",
-    "P7"
+    "P7",
+    "P8"
   ]
 };
 

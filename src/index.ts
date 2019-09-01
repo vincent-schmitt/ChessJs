@@ -1,16 +1,21 @@
 // types
-import { FiguresI, whiteBlackFiguresI } from "./types/index";
+import { FiguresI, aliveFiguresI, MovesT, TakenFieldsI } from "./types/index";
 
 //helpers
 import {
   createAliveStartFigures,
-  createStartFigures
+  createStartFigures,
+  createTakenFieldsFromFigures,
+  createBoardFromTakenFields
 } from "./lib/helpers/index";
 
 class ChessJs {
-  alive: whiteBlackFiguresI;
-  dead: whiteBlackFiguresI;
+  alive: aliveFiguresI;
+  dead: aliveFiguresI;
   figures: FiguresI;
+  moves: MovesT;
+  takenFields: TakenFieldsI;
+  board: any;
   constructor(GameState = null) {
     if (!GameState) {
       this.__newGame();
@@ -20,12 +25,12 @@ class ChessJs {
   }
 
   __newGame = () => {
+    this.moves = [];
     this.alive = createAliveStartFigures();
     this.dead = { white: [], black: [] };
-
     this.figures = createStartFigures();
-
-    console.log(this.figures);
+    this.takenFields = createTakenFieldsFromFigures(this.figures);
+    this.board = createBoardFromTakenFields(this.takenFields);
   };
 }
 
