@@ -6,7 +6,13 @@ import { MovesT } from "./types/ChessJsProperties/Moves";
 
 import { sideIndT } from "./types/ChessJsProperties/Side";
 
-import { TakenFieldsI } from "./types/ChessJsProperties/Fields";
+import {
+  TakenFieldsI,
+  FieldsLabT,
+  FieldI
+} from "./types/ChessJsProperties/Fields";
+
+import { BoardI } from "./types/ChessJsProperties/Board";
 
 import {
   FiguresByColorI,
@@ -29,7 +35,7 @@ class ChessJs {
   private figures: FiguresByColorI;
   private moves: MovesT;
   private takenFields: TakenFieldsI;
-  private board: any;
+  private board: BoardI;
   private check: false | figuresT;
   private turn: sideIndT;
   constructor(GameState = null) {
@@ -54,6 +60,30 @@ class ChessJs {
   getDeadFigures = () => this.deadFigures;
 
   getGameState = (): GameStateI => this.__createGameState();
+
+  getPossibleMoves = (field: FieldsLabT = null) => {
+    if (field != null) {
+      return this.__getPossibleMovesForField(field);
+    } else {
+      return this.__getAllPossibleMoves();
+    }
+  };
+
+  private __getAllPossibleMoves = () => {};
+
+  private __getPossibleMovesForField = (field: FieldsLabT) => {
+    const current = this.__getBoardField(field);
+
+    if (current.figure) {
+      return this.__getPossibleMoves(current);
+    }
+  };
+
+  private __getPossibleMoves = field => {};
+
+  private __getBoardField = (field: FieldsLabT): FieldI => {
+    return this.board[field[0]][field[1]];
+  };
 
   // private
 

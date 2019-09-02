@@ -1,6 +1,7 @@
 // imports
 import { FigureI } from "./Figures";
 import { colorIndT } from "./Colors";
+import { rowT } from "../index";
 
 // exports
 
@@ -76,7 +77,10 @@ export type FieldsLabT =
   | "H7"
   | "H8";
 
-interface FieldI {
+export interface FieldI {
   figure: FigureI;
   color: colorIndT;
+  field: FieldsLabT;
+  row: rowT;
+  column: colorIndT;
 }

@@ -3,6 +3,90 @@ import { aliveFiguresI } from "../types/ChessJsProperties/Figures";
 
 import { sideIndT } from "../types/ChessJsProperties/Side";
 import { turnLabT } from "../types/ChessJsProperties/Turn";
+import { BoardI } from "../types/ChessJsProperties/Board";
+
+export const boardNulled: BoardI = {
+  A: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  B: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  C: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  D: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  E: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  F: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  G: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  },
+  H: {
+    1: { figure: null, color: 1 },
+    2: { figure: null, color: 1 },
+    3: { figure: null, color: 1 },
+    4: { figure: null, color: 1 },
+    5: { figure: null, color: 1 },
+    6: { figure: null, color: 1 },
+    7: { figure: null, color: 1 },
+    8: { figure: null, color: 1 }
+  }
+};
 
 export const figures = [
   "R1",

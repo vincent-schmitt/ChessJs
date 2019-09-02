@@ -6,13 +6,15 @@ import {
   fieldColors,
   rows,
   playerSideLab,
-  playerSideInd
+  playerSideInd,
+  boardNulled
 } from "../constants";
 
 // types
-import { rowT, columnT } from "../../types/index";
-import { TakenFieldsI } from "../../types/ChessJsProperties/Fields";
+import { rowT, columnIndT } from "../../types/index";
+import { TakenFieldsI, FieldsLabT } from "../../types/ChessJsProperties/Fields";
 import { PawnsT, FiguresByColorI } from "../../types/ChessJsProperties/Figures";
+import { BoardI } from "../../types/ChessJsProperties/Board";
 
 export const createAliveStartFigures = () => {
   return whiteBlackFigures;
@@ -173,7 +175,9 @@ export const createStartFigures = () => {
 export const createTakenFieldsFromFigures = (
   figures: FiguresByColorI
 ): TakenFieldsI => {
-  let fields: TakenFieldsI = { A1: { figure: null, color: 0 } };
+  let fields: TakenFieldsI = {
+    A1: { figure: null, color: 0, field: "A1", column: 1, row: 1 }
+  };
 
   Object.keys(figures).map(side => {
     Object.keys(figures[side]).map(figure => {
@@ -181,7 +185,10 @@ export const createTakenFieldsFromFigures = (
 
       fields[fig.field] = {
         figure: fig,
-        color: getFieldColor(fig.field[1], columnsLab[fig.field[0]])
+        color: getFieldColor(fig.field[1], columnsLab[fig.field[0]]),
+        field: fig.field,
+        row: Number(fig.field[1]),
+        column: columnsLab[fig.field[0]]
       };
     });
   });
@@ -197,7 +204,7 @@ const __getFigureFromTakenFields = (field, takenFields: TakenFieldsI) => {
 };
 
 export const createBoardFromTakenFields = (takenFields: TakenFieldsI) => {
-  let board = {};
+  let board: BoardI = boardNulled;
 
   Object.keys(columnsInd).map(column => {
     let current = {};
@@ -227,7 +234,7 @@ const __getRowFieldColor = (order: 0 | 1, column: number) => {
   }
 };
 
-const getFieldColor = (column: columnT, row: rowT) => {
+const getFieldColor = (column: columnIndT, row: rowT) => {
   if (row % 2 === 0) {
     return __getRowFieldColor(0, column);
   } else {
