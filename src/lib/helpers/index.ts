@@ -10,14 +10,9 @@ import {
 } from "../constants";
 
 // types
-import {
-  PawnsT,
-  FiguresI,
-  figureI,
-  TakenFieldsI,
-  rowT,
-  columnT
-} from "../../types/index";
+import { rowT, columnT } from "../../types/index";
+import { TakenFieldsI } from "../../types/ChessJsProperties/Fields";
+import { PawnsT, FiguresByColorI } from "../../types/ChessJsProperties/Figures";
 
 export const createAliveStartFigures = () => {
   return whiteBlackFigures;
@@ -176,7 +171,7 @@ export const createStartFigures = () => {
 };
 
 export const createTakenFieldsFromFigures = (
-  figures: FiguresI
+  figures: FiguresByColorI
 ): TakenFieldsI => {
   let fields: TakenFieldsI = { A1: { figure: null, color: 0 } };
 

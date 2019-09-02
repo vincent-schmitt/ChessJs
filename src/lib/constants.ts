@@ -1,5 +1,8 @@
 // types
-import { aliveFiguresI } from "../types/index";
+import { aliveFiguresI } from "../types/ChessJsProperties/Figures";
+
+import { sideIndT } from "../types/ChessJsProperties/Side";
+import { turnLabT } from "../types/ChessJsProperties/Turn";
 
 export const figures = [
   "R1",
@@ -75,5 +78,18 @@ export const columnsInd = {
 
 export const rows = { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8 };
 
-export const playerSideLab = { white: 0, black: 1 };
+interface turnI {
+  0: turnLabT;
+  1: turnLabT;
+}
+
+interface playersSideI {
+  white: sideIndT;
+  black: sideIndT;
+}
+
+export const turnLab = { white: 0, black: 1 };
+export const turnInd: turnI = { 0: "white", 1: "black" };
+
+export const playerSideLab: playersSideI = { white: 0, black: 1 };
 export const playerSideInd = { 0: "white", 1: "black" };
