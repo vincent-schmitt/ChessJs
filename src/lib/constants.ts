@@ -7,84 +7,84 @@ import { BoardI } from "../types/ChessJsProperties/Board";
 
 export const boardNulled: BoardI = {
   A: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   B: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   C: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   D: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   E: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   F: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   G: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   },
   H: {
-    1: { figure: null, color: 1 },
-    2: { figure: null, color: 1 },
-    3: { figure: null, color: 1 },
-    4: { figure: null, color: 1 },
-    5: { figure: null, color: 1 },
-    6: { figure: null, color: 1 },
-    7: { figure: null, color: 1 },
-    8: { figure: null, color: 1 }
+    1: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    2: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    3: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    4: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    5: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    6: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    7: { figure: null, color: 1, row: 1, column: 1, field: "A1" },
+    8: { figure: null, color: 1, row: 1, column: 1, field: "A1" }
   }
 };
 

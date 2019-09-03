@@ -28,6 +28,10 @@ const __getPawnField = (pawn: PawnsT, side: string) => {
   }
 };
 
+export const getColumnAndRowFromField = (field: FieldsLabT) => {
+  return [columnsLab[field[0]], Number(field[1])];
+};
+
 const __getRookField = (rook, side) => {
   if (playerSideLab[side] === playerSideLab.white) {
     if (rook[1] === "1") {
@@ -195,7 +199,14 @@ export const createTakenFieldsFromFigures = (
   return fields;
 };
 
-const __getFigureFromTakenFields = (field, takenFields: TakenFieldsI) => {
+export const getFieldFromColumnAndRow = (column: columnIndT, row: rowT) => {
+  return columnsInd[column] + row;
+};
+
+const __getFigureFromTakenFields = (
+  field: FieldsLabT,
+  takenFields: TakenFieldsI
+) => {
   if (takenFields[field]) {
     return takenFields[field].figure;
   } else {
@@ -209,13 +220,16 @@ export const createBoardFromTakenFields = (takenFields: TakenFieldsI) => {
   Object.keys(columnsInd).map(column => {
     let current = {};
     Object.keys(rows).map(row => {
+      //@ts-ignore
+
+      const field: FieldsLabT = getFieldFromColumnAndRow(Number(column), row);
       current[row] = {
-        figure: __getFigureFromTakenFields(
-          columnsInd[column] + row,
-          takenFields
-        ),
+        figure: __getFigureFromTakenFields(field, takenFields),
         //@ts-ignore
-        color: getFieldColor(column, row)
+        color: getFieldColor(column, row),
+        column: Number(column),
+        row: row,
+        field: field
       };
     });
     board[columnsInd[column]] = current;

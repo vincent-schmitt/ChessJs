@@ -2,7 +2,7 @@
 
 import { GameStateI } from "./types/ChessJsProperties/GameState";
 
-import { MovesT } from "./types/ChessJsProperties/Moves";
+import { MovesT, possibleCheckMovesI } from "./types/ChessJsProperties/Moves";
 
 import { sideIndT } from "./types/ChessJsProperties/Side";
 
@@ -17,7 +17,8 @@ import { BoardI } from "./types/ChessJsProperties/Board";
 import {
   FiguresByColorI,
   figuresT,
-  aliveFiguresI
+  aliveFiguresI,
+  FigureI
 } from "./types/ChessJsProperties/Figures";
 
 //helpers
@@ -25,19 +26,34 @@ import {
   createAliveStartFigures,
   createStartFigures,
   createTakenFieldsFromFigures,
-  createBoardFromTakenFields
+  createBoardFromTakenFields,
+  getColumnAndRowFromField
 } from "./lib/helpers/index";
-import { playerSideLab, turnInd } from "./lib/constants";
+import {
+  playerSideLab,
+  turnInd,
+  playerSideInd,
+  columnsLab
+} from "./lib/constants";
+import { colorIndT } from "./types/ChessJsProperties/Colors";
+import { rowT } from "./types/index";
+
+import { getPossiblePawnMoves } from "./lib/helpers/moveHelpers";
+
+const getMoves = {
+  P: getPossiblePawnMoves
+};
 
 class ChessJs {
   private aliveFigures: aliveFiguresI;
   private deadFigures: aliveFiguresI;
   private figures: FiguresByColorI;
-  private moves: MovesT;
+  private moveHistory: MovesT;
   private takenFields: TakenFieldsI;
   private board: BoardI;
   private check: false | figuresT;
   private turn: sideIndT;
+  private possibleCheckMoves: possibleCheckMovesI;
   constructor(GameState = null) {
     if (!GameState) {
       this.__initNewGame();
@@ -51,7 +67,7 @@ class ChessJs {
 
   getBoard = () => this.board;
 
-  getMoves = () => this.moves;
+  getMoveHistory = () => this.moveHistory;
 
   getTakenFields = () => this.takenFields;
 
@@ -77,9 +93,16 @@ class ChessJs {
     if (current.figure) {
       return this.__getPossibleMoves(current);
     }
+    return null;
   };
 
-  private __getPossibleMoves = field => {};
+  private __getPossibleMoves = (field: FieldI) => {
+    if (this.check) {
+      // TODO: figure out check moves
+    } else {
+      return getMoves[field.figure.type](field, this.figures);
+    }
+  };
 
   private __getBoardField = (field: FieldsLabT): FieldI => {
     return this.board[field[0]][field[1]];
@@ -91,13 +114,13 @@ class ChessJs {
     turn: turnInd[this.turn],
     check: this.check,
     figures: this.figures,
-    moves: this.moves
+    moves: this.moveHistory
   });
 
   // setters
 
   private __initNewGame = () => {
-    this.moves = [];
+    this.moveHistory = [];
     this.deadFigures = { white: [], black: [] };
     this.check = false;
     this.turn = playerSideLab.white;

@@ -1,83 +1,275 @@
 export const boardAtStart = {
   A: {
-    "1": { figure: { type: "R", side: 0, field: "A1", moves: [] }, color: 0 },
-    "2": { figure: { type: "P", side: 0, field: "A2", moves: [] }, color: 1 },
-    "3": { figure: null, color: 0 },
-    "4": { figure: null, color: 1 },
-    "5": { figure: null, color: 0 },
-    "6": { figure: null, color: 1 },
-    "7": { figure: { type: "P", side: 1, field: "A7", moves: [] }, color: 0 },
-    "8": { figure: { type: "R", side: 1, field: "A8", moves: [] }, color: 1 }
+    "1": {
+      figure: { type: "R", side: 0, field: "A1", moves: [] },
+      color: 0,
+      column: 1,
+      row: "1",
+      field: "A1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "A2", moves: [] },
+      color: 1,
+      column: 1,
+      row: "2",
+      field: "A2"
+    },
+    "3": { figure: null, color: 0, column: 1, row: "3", field: "A3" },
+    "4": { figure: null, color: 1, column: 1, row: "4", field: "A4" },
+    "5": { figure: null, color: 0, column: 1, row: "5", field: "A5" },
+    "6": { figure: null, color: 1, column: 1, row: "6", field: "A6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "A7", moves: [] },
+      color: 0,
+      column: 1,
+      row: "7",
+      field: "A7"
+    },
+    "8": {
+      figure: { type: "R", side: 1, field: "A8", moves: [] },
+      color: 1,
+      column: 1,
+      row: "8",
+      field: "A8"
+    }
   },
   B: {
-    "1": { figure: { type: "N", side: 0, field: "B1", moves: [] }, color: 1 },
-    "2": { figure: { type: "P", side: 0, field: "B2", moves: [] }, color: 0 },
-    "3": { figure: null, color: 1 },
-    "4": { figure: null, color: 0 },
-    "5": { figure: null, color: 1 },
-    "6": { figure: null, color: 0 },
-    "7": { figure: { type: "P", side: 1, field: "B7", moves: [] }, color: 1 },
-    "8": { figure: { type: "N", side: 1, field: "B8", moves: [] }, color: 0 }
+    "1": {
+      figure: { type: "N", side: 0, field: "B1", moves: [] },
+      color: 1,
+      column: 2,
+      row: "1",
+      field: "B1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "B2", moves: [] },
+      color: 0,
+      column: 2,
+      row: "2",
+      field: "B2"
+    },
+    "3": { figure: null, color: 1, column: 2, row: "3", field: "B3" },
+    "4": { figure: null, color: 0, column: 2, row: "4", field: "B4" },
+    "5": { figure: null, color: 1, column: 2, row: "5", field: "B5" },
+    "6": { figure: null, color: 0, column: 2, row: "6", field: "B6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "B7", moves: [] },
+      color: 1,
+      column: 2,
+      row: "7",
+      field: "B7"
+    },
+    "8": {
+      figure: { type: "N", side: 1, field: "B8", moves: [] },
+      color: 0,
+      column: 2,
+      row: "8",
+      field: "B8"
+    }
   },
   C: {
-    "1": { figure: { type: "B", side: 0, field: "C1", moves: [] }, color: 0 },
-    "2": { figure: { type: "P", side: 0, field: "C2", moves: [] }, color: 1 },
-    "3": { figure: null, color: 0 },
-    "4": { figure: null, color: 1 },
-    "5": { figure: null, color: 0 },
-    "6": { figure: null, color: 1 },
-    "7": { figure: { type: "P", side: 1, field: "C7", moves: [] }, color: 0 },
-    "8": { figure: { type: "B", side: 1, field: "C8", moves: [] }, color: 1 }
+    "1": {
+      figure: { type: "B", side: 0, field: "C1", moves: [] },
+      color: 0,
+      column: 3,
+      row: "1",
+      field: "C1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "C2", moves: [] },
+      color: 1,
+      column: 3,
+      row: "2",
+      field: "C2"
+    },
+    "3": { figure: null, color: 0, column: 3, row: "3", field: "C3" },
+    "4": { figure: null, color: 1, column: 3, row: "4", field: "C4" },
+    "5": { figure: null, color: 0, column: 3, row: "5", field: "C5" },
+    "6": { figure: null, color: 1, column: 3, row: "6", field: "C6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "C7", moves: [] },
+      color: 0,
+      column: 3,
+      row: "7",
+      field: "C7"
+    },
+    "8": {
+      figure: { type: "B", side: 1, field: "C8", moves: [] },
+      color: 1,
+      column: 3,
+      row: "8",
+      field: "C8"
+    }
   },
   D: {
-    "1": { figure: { type: "Q", side: 0, field: "D1", moves: [] }, color: 1 },
-    "2": { figure: { type: "P", side: 0, field: "D2", moves: [] }, color: 0 },
-    "3": { figure: null, color: 1 },
-    "4": { figure: null, color: 0 },
-    "5": { figure: null, color: 1 },
-    "6": { figure: null, color: 0 },
-    "7": { figure: { type: "P", side: 1, field: "D7", moves: [] }, color: 1 },
-    "8": { figure: { type: "Q", side: 1, field: "D8", moves: [] }, color: 0 }
+    "1": {
+      figure: { type: "Q", side: 0, field: "D1", moves: [] },
+      color: 1,
+      column: 4,
+      row: "1",
+      field: "D1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "D2", moves: [] },
+      color: 0,
+      column: 4,
+      row: "2",
+      field: "D2"
+    },
+    "3": { figure: null, color: 1, column: 4, row: "3", field: "D3" },
+    "4": { figure: null, color: 0, column: 4, row: "4", field: "D4" },
+    "5": { figure: null, color: 1, column: 4, row: "5", field: "D5" },
+    "6": { figure: null, color: 0, column: 4, row: "6", field: "D6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "D7", moves: [] },
+      color: 1,
+      column: 4,
+      row: "7",
+      field: "D7"
+    },
+    "8": {
+      figure: { type: "Q", side: 1, field: "D8", moves: [] },
+      color: 0,
+      column: 4,
+      row: "8",
+      field: "D8"
+    }
   },
   E: {
-    "1": { figure: { type: "K", side: 0, field: "E1", moves: [] }, color: 0 },
-    "2": { figure: { type: "P", side: 0, field: "E2", moves: [] }, color: 1 },
-    "3": { figure: null, color: 0 },
-    "4": { figure: null, color: 1 },
-    "5": { figure: null, color: 0 },
-    "6": { figure: null, color: 1 },
-    "7": { figure: { type: "P", side: 1, field: "E7", moves: [] }, color: 0 },
-    "8": { figure: { type: "K", side: 1, field: "E8", moves: [] }, color: 1 }
+    "1": {
+      figure: { type: "K", side: 0, field: "E1", moves: [] },
+      color: 0,
+      column: 5,
+      row: "1",
+      field: "E1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "E2", moves: [] },
+      color: 1,
+      column: 5,
+      row: "2",
+      field: "E2"
+    },
+    "3": { figure: null, color: 0, column: 5, row: "3", field: "E3" },
+    "4": { figure: null, color: 1, column: 5, row: "4", field: "E4" },
+    "5": { figure: null, color: 0, column: 5, row: "5", field: "E5" },
+    "6": { figure: null, color: 1, column: 5, row: "6", field: "E6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "E7", moves: [] },
+      color: 0,
+      column: 5,
+      row: "7",
+      field: "E7"
+    },
+    "8": {
+      figure: { type: "K", side: 1, field: "E8", moves: [] },
+      color: 1,
+      column: 5,
+      row: "8",
+      field: "E8"
+    }
   },
   F: {
-    "1": { figure: { type: "B", side: 0, field: "F1", moves: [] }, color: 1 },
-    "2": { figure: { type: "P", side: 0, field: "F2", moves: [] }, color: 0 },
-    "3": { figure: null, color: 1 },
-    "4": { figure: null, color: 0 },
-    "5": { figure: null, color: 1 },
-    "6": { figure: null, color: 0 },
-    "7": { figure: { type: "P", side: 1, field: "F7", moves: [] }, color: 1 },
-    "8": { figure: { type: "B", side: 1, field: "F8", moves: [] }, color: 0 }
+    "1": {
+      figure: { type: "B", side: 0, field: "F1", moves: [] },
+      color: 1,
+      column: 6,
+      row: "1",
+      field: "F1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "F2", moves: [] },
+      color: 0,
+      column: 6,
+      row: "2",
+      field: "F2"
+    },
+    "3": { figure: null, color: 1, column: 6, row: "3", field: "F3" },
+    "4": { figure: null, color: 0, column: 6, row: "4", field: "F4" },
+    "5": { figure: null, color: 1, column: 6, row: "5", field: "F5" },
+    "6": { figure: null, color: 0, column: 6, row: "6", field: "F6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "F7", moves: [] },
+      color: 1,
+      column: 6,
+      row: "7",
+      field: "F7"
+    },
+    "8": {
+      figure: { type: "B", side: 1, field: "F8", moves: [] },
+      color: 0,
+      column: 6,
+      row: "8",
+      field: "F8"
+    }
   },
   G: {
-    "1": { figure: { type: "N", side: 0, field: "G1", moves: [] }, color: 0 },
-    "2": { figure: { type: "P", side: 0, field: "G2", moves: [] }, color: 1 },
-    "3": { figure: null, color: 0 },
-    "4": { figure: null, color: 1 },
-    "5": { figure: null, color: 0 },
-    "6": { figure: null, color: 1 },
-    "7": { figure: { type: "P", side: 1, field: "G7", moves: [] }, color: 0 },
-    "8": { figure: { type: "N", side: 1, field: "G8", moves: [] }, color: 1 }
+    "1": {
+      figure: { type: "N", side: 0, field: "G1", moves: [] },
+      color: 0,
+      column: 7,
+      row: "1",
+      field: "G1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "G2", moves: [] },
+      color: 1,
+      column: 7,
+      row: "2",
+      field: "G2"
+    },
+    "3": { figure: null, color: 0, column: 7, row: "3", field: "G3" },
+    "4": { figure: null, color: 1, column: 7, row: "4", field: "G4" },
+    "5": { figure: null, color: 0, column: 7, row: "5", field: "G5" },
+    "6": { figure: null, color: 1, column: 7, row: "6", field: "G6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "G7", moves: [] },
+      color: 0,
+      column: 7,
+      row: "7",
+      field: "G7"
+    },
+    "8": {
+      figure: { type: "N", side: 1, field: "G8", moves: [] },
+      color: 1,
+      column: 7,
+      row: "8",
+      field: "G8"
+    }
   },
   H: {
-    "1": { figure: { type: "R", side: 0, field: "H1", moves: [] }, color: 1 },
-    "2": { figure: { type: "P", side: 0, field: "H2", moves: [] }, color: 0 },
-    "3": { figure: null, color: 1 },
-    "4": { figure: null, color: 0 },
-    "5": { figure: null, color: 1 },
-    "6": { figure: null, color: 0 },
-    "7": { figure: { type: "P", side: 1, field: "H7", moves: [] }, color: 1 },
-    "8": { figure: { type: "R", side: 1, field: "H8", moves: [] }, color: 0 }
+    "1": {
+      figure: { type: "R", side: 0, field: "H1", moves: [] },
+      color: 1,
+      column: 8,
+      row: "1",
+      field: "H1"
+    },
+    "2": {
+      figure: { type: "P", side: 0, field: "H2", moves: [] },
+      color: 0,
+      column: 8,
+      row: "2",
+      field: "H2"
+    },
+    "3": { figure: null, color: 1, column: 8, row: "3", field: "H3" },
+    "4": { figure: null, color: 0, column: 8, row: "4", field: "H4" },
+    "5": { figure: null, color: 1, column: 8, row: "5", field: "H5" },
+    "6": { figure: null, color: 0, column: 8, row: "6", field: "H6" },
+    "7": {
+      figure: { type: "P", side: 1, field: "H7", moves: [] },
+      color: 1,
+      column: 8,
+      row: "7",
+      field: "H7"
+    },
+    "8": {
+      figure: { type: "R", side: 1, field: "H8", moves: [] },
+      color: 0,
+      column: 8,
+      row: "8",
+      field: "H8"
+    }
   }
 };
 
