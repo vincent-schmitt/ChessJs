@@ -12,4 +12,9 @@ describe("new Game is correctly initialized", () => {
     expect(Game.getPossibleMoves("A2")).toContain("A3");
     expect(Game.getPossibleMoves("A2")).toContain("A4");
   });
+
+  test("all figures are alive after new Game is initialized", () => {
+    expect(Game.getPossibleMoves("A7")).toContain("A5");
+    expect(Game.getPossibleMoves("A7")).toContain("A6");
+  });
 });
