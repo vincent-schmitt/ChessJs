@@ -38,10 +38,14 @@ import {
 import { colorIndT } from "./types/ChessJsProperties/Colors";
 import { rowT } from "./types/index";
 
-import { getPossiblePawnMoves } from "./lib/helpers/moveHelpers";
+import {
+  getPossiblePawnMoves,
+  getPossibleRookMoves
+} from "./lib/helpers/moveHelpers";
 
 const getMoves = {
-  P: getPossiblePawnMoves
+  P: getPossiblePawnMoves,
+  R: getPossibleRookMoves
 };
 
 class ChessJs {

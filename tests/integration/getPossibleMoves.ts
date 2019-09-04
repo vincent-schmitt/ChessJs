@@ -8,4 +8,8 @@ describe("getPossibleMoves returns right moves at start", () => {
     expect(Game.getPossibleMoves("A7")).toContain("A6");
     expect(Game.getPossibleMoves("A7")).toContain("A5");
   });
+
+  test("Rook moves are returned correctly", () => {
+    expect(Game.getPossibleMoves("A1")).toEqual([]);
+  });
 });
