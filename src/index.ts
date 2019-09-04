@@ -104,7 +104,7 @@ class ChessJs {
     if (this.check) {
       // TODO: figure out check moves
     } else {
-      return getMoves[field.figure.type](field, this.figures);
+      return getMoves[field.figure.type](field, this.takenFields, this.figures);
     }
   };
 
