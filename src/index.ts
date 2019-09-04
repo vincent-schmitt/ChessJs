@@ -63,6 +63,10 @@ class ChessJs {
   }
   // getters
 
+  getTurn = () => this.turn;
+
+  getCheck = () => this.check;
+
   getFigures = () => this.figures;
 
   getBoard = () => this.board;
