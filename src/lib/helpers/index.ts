@@ -199,7 +199,11 @@ export const createTakenFieldsFromFigures = (
   return fields;
 };
 
-export const getFieldFromColumnAndRow = (column: columnIndT, row: rowT) => {
+export const getFieldFromColumnAndRow = (
+  column: columnIndT,
+  row: rowT
+): FieldsLabT => {
+  //@ts-ignore
   return columnsInd[column] + row;
 };
 
