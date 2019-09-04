@@ -40,12 +40,14 @@ import { rowT } from "./types/index";
 
 import {
   getPossiblePawnMoves,
-  getPossibleRookMoves
+  getPossibleRookMoves,
+  getPossibleKnightMoves
 } from "./lib/helpers/moveHelpers";
 
 const getMoves = {
   P: getPossiblePawnMoves,
-  R: getPossibleRookMoves
+  R: getPossibleRookMoves,
+  N: getPossibleKnightMoves
 };
 
 class ChessJs {

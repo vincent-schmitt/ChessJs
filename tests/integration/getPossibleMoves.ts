@@ -11,5 +11,14 @@ describe("getPossibleMoves returns right moves at start", () => {
 
   test("Rook moves are returned correctly", () => {
     expect(Game.getPossibleMoves("A1")).toEqual([]);
+    expect(Game.getPossibleMoves("H8")).toEqual([]);
+  });
+
+  test("Knight moves are returned correctly", () => {
+    expect(Game.getPossibleMoves("B1")).toContain("A3");
+    expect(Game.getPossibleMoves("B1")).toContain("C3");
+
+    expect(Game.getPossibleMoves("G8")).toContain("H6");
+    expect(Game.getPossibleMoves("G8")).toContain("F6");
   });
 });

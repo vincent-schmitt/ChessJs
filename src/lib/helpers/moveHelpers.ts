@@ -16,98 +16,6 @@ import { getFieldFromColumnAndRow } from "./index";
 import { sideLabT } from "../../types/ChessJsProperties/Side";
 import { columnsInd, columnsLab } from "../constants";
 
-interface moveI {
-  row: rowT;
-  column: columnIndT;
-  kill: boolean;
-}
-
-export const getPossibleRookMoves = (
-  field: FieldI,
-  takenFields: TakenFieldsI
-) => {
-  let possibleMoves = [];
-
-  // Horizontal
-  const direction = { left: -1, right: 1 };
-
-  Object.keys(direction).forEach(dir => {
-    let found = false;
-    let cur = field.field;
-    while (!found) {
-      const current = getAdjacentFieldHor(cur, direction[dir]);
-      if (current) {
-        const currentField = takenFields[current];
-        if (currentField) {
-          if (currentField.figure.side !== field.figure.side) {
-            possibleMoves.push(current);
-            found = true;
-          } else {
-            found = true;
-          }
-        } else {
-          possibleMoves.push(current);
-        }
-        cur = current;
-      } else {
-        found = true;
-      }
-    }
-  });
-
-  // Vertical
-
-  Object.keys(direction).forEach(dir => {
-    let found = false;
-    let cur = field.field;
-
-    while (!found) {
-      const current = getAdjacentFieldVer(cur, direction[dir]);
-      if (current) {
-        const currentField = takenFields[current];
-        if (currentField) {
-          if (currentField.figure.side !== field.figure.side) {
-            possibleMoves.push(current);
-            found = true;
-          } else {
-            found = true;
-          }
-        } else {
-          possibleMoves.push(current);
-        }
-        cur = current;
-      } else {
-        found = true;
-      }
-    }
-  });
-  return possibleMoves;
-};
-
-const getAdjacentFieldHor = (
-  field: FieldsLabT,
-  direction: -1 | 1
-): FieldsLabT | false => {
-  const newColumn = columnsInd[columnsLab[field[0] + direction]];
-  if (newColumn) {
-    //@ts-ignore
-
-    return newColumn + field[1];
-  }
-  return false;
-};
-
-const getAdjacentFieldVer = (
-  field: FieldsLabT,
-  direction: -1 | 1
-): FieldsLabT | false => {
-  if (Number(field[1]) + direction <= 8 && Number(field[1]) + direction >= 1) {
-    //@ts-ignore
-    return field[0] + (Number(field[1]) + direction);
-  }
-  return false;
-};
-
 export const getPossiblePawnMoves = (
   field: FieldI,
   takenFields: TakenFieldsI,
@@ -169,6 +77,151 @@ export const getPossiblePawnMoves = (
     }
   });
   return possibleMoves;
+};
+
+export const getPossibleRookMoves = (
+  field: FieldI,
+  takenFields: TakenFieldsI
+) => {
+  let possibleMoves = [];
+
+  // Horizontal
+  possibleMoves.concat(getPossibleHorizontalMoves(field, takenFields));
+  // Vertical
+  possibleMoves.concat(getVerticalPossibleMoves(field, takenFields));
+
+  return possibleMoves;
+};
+
+export const getPossibleKnightMoves = (
+  field: FieldI,
+  takenFields: TakenFieldsI
+) => {
+  let possibleMoves = [];
+
+  const [column, row] = getColumnAndRowFromField(field.field);
+  const pMoves = [
+    { column: column + 2, row: row + 1 },
+    { column: column + 2, row: row - 1 },
+    { column: column - 2, row: row + 1 },
+    { column: column + 2, row: row - 1 },
+    { column: column + 1, row: row + 2 },
+    { column: column - 1, row: row + 2 },
+    { column: column + 1, row: row - 2 },
+    { column: column - 1, row: row - 2 }
+  ];
+
+  for (let move of pMoves) {
+    if (isValidField(move.column, move.row)) {
+      const cur = takenFields[getFieldFromColumnAndRow(move.column, move.row)];
+
+      if (cur) {
+        if (cur.figure.side !== field.figure.side) {
+          possibleMoves.push(getFieldFromColumnAndRow(move.column, move.row));
+        }
+      } else {
+        possibleMoves.push(getFieldFromColumnAndRow(move.column, move.row));
+      }
+    }
+  }
+  return possibleMoves;
+};
+
+const isValidField = (column: columnIndT, row: rowT) => {
+  if (column > 8 || column < 1 || row > 8 || row < 1) {
+    return false;
+  }
+  return true;
+};
+
+const getPossibleHorizontalMoves = (
+  orgField: FieldI,
+  takenFields: TakenFieldsI
+) => {
+  const direction = { left: -1, right: 1 };
+  let possibleMoves = [];
+  Object.keys(direction).forEach(dir => {
+    let found = false;
+    let cur = orgField.field;
+    while (!found) {
+      const current = getAdjacentFieldHor(cur, direction[dir]);
+      if (current) {
+        const currentField = takenFields[current];
+        if (currentField) {
+          if (currentField.figure.side !== orgField.figure.side) {
+            possibleMoves.push(current);
+            found = true;
+          } else {
+            found = true;
+          }
+        } else {
+          possibleMoves.push(current);
+        }
+        cur = current;
+      } else {
+        found = true;
+      }
+    }
+  });
+  return possibleMoves;
+};
+
+const getVerticalPossibleMoves = (
+  orgField: FieldI,
+  takenFields: TakenFieldsI
+) => {
+  const direction = { left: -1, right: 1 };
+  let possibleMoves = [];
+
+  Object.keys(direction).forEach(dir => {
+    let found = false;
+    let cur = orgField.field;
+
+    while (!found) {
+      const current = getAdjacentFieldVer(cur, direction[dir]);
+      if (current) {
+        const currentField = takenFields[current];
+        if (currentField) {
+          if (currentField.figure.side !== orgField.figure.side) {
+            possibleMoves.push(current);
+            found = true;
+          } else {
+            found = true;
+          }
+        } else {
+          possibleMoves.push(current);
+        }
+        cur = current;
+      } else {
+        found = true;
+      }
+    }
+  });
+  return possibleMoves;
+};
+
+const getAdjacentFieldHor = (
+  field: FieldsLabT,
+  direction: -1 | 1
+): FieldsLabT | false => {
+  const newColumn = columnsInd[columnsLab[field[0] + direction]];
+  if (newColumn) {
+    //@ts-ignore
+
+    return newColumn + field[1];
+  }
+  return false;
+};
+
+const getAdjacentFieldVer = (
+  field: FieldsLabT,
+  direction: -1 | 1
+): FieldsLabT | false => {
+  if (Number(field[1]) + direction <= 8 && Number(field[1]) + direction >= 1) {
+    //@ts-ignore
+    return field[0] + (Number(field[1]) + direction);
+  }
+  return false;
 };
 
 const updateTakenFields = (
